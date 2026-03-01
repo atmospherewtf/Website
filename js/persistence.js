@@ -1,0 +1,1 @@
+// automatically add header and footer to pages someone please make thanks

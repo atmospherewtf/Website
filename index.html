@@ -1,46 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<title>atmosphere.wtf</title>
-<meta content="atmosphere.wtf" property="og:title" />
-<meta content="! THEY SAID IT COULDN'T BE DONE !" property="og:description" />
+<title>Atmosphere Client</title>
+<meta content="Atmosphere Client" property="og:title" />
+<meta content="what are you waiting for?" property="og:description" />
 <meta content="https://atmosphere.wtf" property="og:url" />
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta property="og:image" content="favicon.ico">
 <meta content="#8080FF" data-react-helmet="true" name="theme-color" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>atmosphere.wtf</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="/styles/global/base.css">
+    <link rel="stylesheet" href="/styles/global/navbar.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/global/footer.css">
 </head>
+
 <body>
-    <marquee>
-        <p id="news">BREAKING NEWS: LOCAL USER UNABLE TO LOAD JAVASCRIPT?! ATMOSPHERE DEVS ARE PISSED.</p>
-    </marquee>
-
-    <div id="about" class="box">
-        <p
-            id="title"
-            class="box-title accent"
-            onclick="alert('YOU\'RE ALREADY ON THE WEBSITE WHERE U TRYNA GO?')"
-        >
-            atmosphere.wtf 
-        </p>
-
-        <div class="box-content">
-            <p>
-                welcome to the atmosphere official website<br>
-                here you can find atmosphere things
-            </p>
-
-            <div id="links">
-                <a href="https://youtube.com/@atmosphereclient">youtube</a>
-                <a href="https://github.com/atmosphereclient">github</a>
-                <a href="https://discord.gg/QAYFNVvx8g">discord</a>
+    <div id="navbar">
+        <div class="content">
+            <a href="/" class="logo"><img src="/img/128.png"></a>
+            <div class="spacer"></div>
+            <div class="tabs">
+                <a href="#purchase" class="tab">Purchase</a>
+                <a href="/i/login" class="tab">Dashboard</a>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <div id="main">
+        <img src="img/Big.png">
+        <h1>Atmosphere</h1>
+        <p>shitty client no bypass hypixel</p>
+        <div class="buttons">
+            <a href="#purchase"><button>Purchase</button></a>
+            <a href="https://discord.gg/YdHGZcKtER"><button>Discord</button></a>
+        </div>
+    </div>
+
+    <div id="media">
+        <h2>Media</h2>
+        <div class="videos">
+            <iframe src="https://www.youtube.com/embed/ZxRmyfYnqi8" width="426" height="240" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/yBYm9tJwZ-4" width="426" height="240" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/1NClSmkxRAs" width="426" height="240" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/R7IvocIYnjI" width="426" height="240" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="list">
+            <div>
+                <b>liquidsquid</b>
+                <p class="italic">"HE'S HACKING HE'S RUINING THE GAME!"</p><br>
+                <p class="subtle">15/02/25</p>
+            </div>
+
+            <div>
+                <b>bukky</b>
+                <p class="italic">"ARE YOU SPAWNING ITEMS-"</p><br>
+                <p class="subtle">20/02/25</p>
+            </div>
+
+            <div>
+                <b>final</b>
+                <p class="italic">"Chinese Adjust"</p><br>
+                <p class="subtle">??/??/25</p>
+            </div>
+
+            <div>
+                <b>CalculusHvH</b>
+                <p class="italic">"Terrifying Client"</p><br>
+                <p class="subtle">24/02/26</p>
+            </div>
+
+            <div>
+                <b>auth</b>
+                <p class="italic">"atmosphere is forged from the souls of 400 creative indian soldiers<br>who sacrificed their blood sweat and tears to create this beautiful masterpiece"</p>
+                <p class="subtle">24/02/26</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="purchase">
+        <h2>Purchase</h2>
+<!--        <p class="notice">Can't do crypto? Check out our list of <a>official resellers</a>.</p>-->
+
+        <div class="purchase-options">
+
+<!--            <div class="purchase-option">-->
+<!--                <div class="line"></div>-->
+<!--                <div class="content">-->
+<!--                    <h3>Lifetime</h3>-->
+<!--                    <h4>$XX.XX</h4>-->
+<!--                    <p>Access to the product throughout the entirety of its lifetime*</p>-->
+<!--                    <div class="spacer"></div>-->
+<!--                    <div class="bottom">-->
+<!--                        <p class="subtle">(Bitcoin / Litecoin)</p>-->
+<!--                        <div class="crypto">-->
+<!--                            <img src="/img/payment/btc.png" alt="bitcoin">-->
+<!--                            <img src="/img/payment/ltc.png" alt="litecoin">-->
+<!--                        </div>-->
+<!--                        <button>Purchase</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <div class="purchase-option">
+                <div class="line"></div>
+                <div class="content">
+                    <h3>Monthly</h3>
+                    <h4>$X.XX / month</h4>
+                    <p>Access to the product during active subscription time*</p>
+                    <div class="spacer"></div>
+                    <div class="bottom">
+                        <p class="subtle">(Litecoin / Ethereum / +More)</p>
+                        <div class="payments">
+                            <img src="/img/payment/ltc.png" alt="litecoin">
+                            <img src="/img/payment/ethereum.png" alt="ethereum">
+                            <img src="/img/payment/more.png" alt="more">
+                        </div>
+                        <button>Coming Soon</button> <!-- Purchase -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="purchase-option">
+                <div class="line"></div>
+                <div class="content">
+                    <h3>Reseller</h3>
+                    <h4>$X.XX / month</h4>
+                    <p>Access to the product via a third-party reseller</p>
+                    <div class="spacer"></div>
+                    <div class="bottom">
+                        <p class="subtle">(Stripe)</p>
+                        <div class="payments">
+                            <img src="/img/payment/stripe.png" alt="stripe">
+                        </div>
+                        <button>Coming Soon</button> <!-- Learn More -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="subtle">*Any purchases made must be in compliance with our <a href="/tos">terms of service</a>.</p>
+    </div>
+
+    <div id="footer">
+        <div class="content">
+            <div>© ShadowOcto 2026. All rights reserved.</div>
+            <div class="spacer"></div>
+            <div class="right">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/tos">Terms Of Service</a>
+            </div>
+        </div>
+    </div>
+
+<!--    <script src="script.js"></script>-->
 </body>

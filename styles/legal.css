@@ -1,0 +1,26 @@
+h1 {
+    margin-bottom: 0;
+}
+
+h3 {
+    font-weight: 400;
+    color: #999;
+    margin-top: 0;
+    font-size: 1em;
+}
+
+.header {
+    padding: 30px;
+}
+
+.text-content {
+    min-height: calc(100vh - 357px);
+    transform: translateX(-50%);
+    margin-bottom: 100px;
+    position: relative;
+    text-align: left;
+    max-width: 800px;
+    left: 50%;
+}
+
+@media only screen and (max-width: 800px) { .text-content { max-width: 90%; } }
