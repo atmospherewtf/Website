@@ -18,6 +18,7 @@ import './styles/global/base.css'
 import './styles/global/navbar.css'
 import './styles/global/footer.css'
 import DefaultLayout from "./layouts/Default.tsx";
+import PurchasePage from './pages/PurchasePage.tsx';
 
 export const routes: RouteRecord[] = [
     {
@@ -53,6 +54,11 @@ export const routes: RouteRecord[] = [
                 path: "/logout",
                 element: <LogoutPage/>,
             },
+
+            {
+                path: "/purchase",
+                element: <PurchasePage/>,
+            }
         ],
     },
 
