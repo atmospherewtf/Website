@@ -5,7 +5,7 @@
 
 import {Link} from "react-router-dom";
 
-function Footer() {
+function Footer({isAuthed}: {isAuthed?: boolean}) {
     return (
         <>
             <div id="footer">
@@ -13,6 +13,7 @@ function Footer() {
                     <div>© Atmosphere 2026. All rights reserved.</div>
                     <div className="spacer"></div>
                     <div className="right">
+                        {isAuthed && <Link to="/media">Media Guidelines</Link>}
                         <Link to="/privacy">Privacy Policy</Link>
                         <Link to="/tos">Terms Of Service</Link>
                     </div>

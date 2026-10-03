@@ -20,12 +20,10 @@ function DasboardNavbar({user}: {user?: any}) {
         <>
             <div id="navbar">
                 <div className="content">
-                    <Link to="/" className="logo"><img src={icon128}/></Link>
+                    <Link to="/" className="logo"><img alt="icon" src={icon128}/></Link>
                     {
                         user?.demo ? (
-                            <p className="demo-banner">
-                                <h3>{width > threshold ? (<>This is a <b>DEMO</b> account</>): (<b>DEMO</b>) }</h3>
-                            </p>
+                            <h3 className="demo-banner">{width > threshold ? (<>This is a <b>DEMO</b> account</>): (<b>DEMO</b>) }</h3>
                         ) : (<></>)
                     }
                     <div className="spacer"></div>

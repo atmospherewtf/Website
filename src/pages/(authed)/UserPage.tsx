@@ -1,24 +1,27 @@
-import {type User, UserTemplate} from "../../types/User.ts";
+import {type User} from "../../types/User.ts";
 import {useEffect, useState} from "react";
 import "../../styles/dashboard.css"
+import {useNavigate} from "react-router-dom";
 
 function UserPage() {
-    const [user, setUser] = useState<User>(UserTemplate);
-    useEffect(() => setUser(
-        localStorage.getItem("user") ?
-        JSON.parse(localStorage.getItem("user") as string)
-        : UserTemplate),
-    []);
-    // console.log(localStorage.getItem("user"));
+    const router = useNavigate();
+    const [user, setUser] = useState<User>();
+    useEffect(() => {
+        setUser(
+            localStorage.getItem("user")
+                ? JSON.parse(localStorage.getItem("user") as string)
+                : null
+        );
+    }, []);
 
-    return (
+    return user ? (
         <>
             {/*// <!-- Account -->*/}
             <div id="account" className="page">
                 <h1>Account</h1>
                 <div className="content">
                     <div className="profile">
-                        <img src={user.avatar}/>
+                        <img alt="avatar" src={user.avatar} />
                         <div className="info">
                             <h2>{user?.username}</h2>
                             <h4>UID {user.id} • @{user.discord?.username ?? "discord"}</h4>
@@ -29,7 +32,7 @@ function UserPage() {
                         <div id="skin" className="customization">
                             <div className="line"></div>
                             <h3>Custom Skin</h3>
-                            <img src={user.skin}/><br/>
+                            <img alt="skin" src={user.skin}/><br/>
                             <button id="upload-skin">Upload</button>
                             <div className="skin-types">
                                 <button id="skin-default">Default</button>
@@ -40,7 +43,7 @@ function UserPage() {
                         <div id="cape" className="customization">
                             <div className="line"></div>
                             <h3>Custom Cape</h3>
-                            <img src={user.cape}/><br/>
+                            <img alt="cape" src={user.cape}/><br/>
                             <button id="upload-cape">Upload</button>
                             <button id="remove-cape" className="disabled">Remove</button>
                         </div>
@@ -87,7 +90,7 @@ function UserPage() {
 
             {/*<script src="script.js"></script>*/}
         </>
-    )
+    ) : (<></>);
 }
 
 export default UserPage

@@ -11,16 +11,15 @@ function LoginPage() {
     const [password, setPassword] = useState("");
 
     useEffect(() => {
-        fetch(`${BASE_URL}/user/@me`, {
+        fetch(`${BASE_URL()}/user/@me`, {
            credentials: "include",
         }).then(res => {
-            if (res.status == 200)
-                router("/dashboard")
+            if (res.status == 200) return router("/dashboard")
         });
     }, []);
 
     function submit() {
-        fetch(`${BASE_URL}/auth/login`, {
+        fetch(`${BASE_URL()}/auth/login`, {
             method: "POST",
             credentials: "include",
             headers: {
@@ -31,7 +30,7 @@ function LoginPage() {
                 password: password,
             }),
         }).then(async (res) => {
-            if (res.status !== 200) return router("/dashboard");
+            if (res.status !== 200) return;
             let data = await res.json();
             document.cookie = `token=${data.session};max-age=604800;samesite=none;secure;`;
             // hack - race condition on useeffect for layout on redirect or sum
@@ -50,7 +49,7 @@ function LoginPage() {
                     <i className="fa-solid fa-user"></i>
                 </div>
                 <div className="field">
-                    <input type="text" placeholder="password" onChange={(event) => setPassword(event.target.value)}/>
+                    <input type="password" placeholder="password" onChange={(event) => setPassword(event.target.value)}/>
                     <i className="fa-solid fa-lock"></i>
                 </div>
                 <div className="cf-turnstile" data-sitekey="0x4AAAAAAB-eqatgpeXCV0xt"></div>

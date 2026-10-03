@@ -6,7 +6,6 @@ import Footer from "../components/Footer.tsx";
 
 import {Outlet} from "react-router-dom";
 
-// export let user2: any;
 function DashboardLayout() {
 
     return (
@@ -17,7 +16,7 @@ function DashboardLayout() {
                 <Outlet />
             </Suspense>
             {/*{children}*/}
-            <Footer />
+            {/*<Footer />*/}
             </ErrorBoundary>
         </>
     );

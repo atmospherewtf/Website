@@ -133,6 +133,12 @@ h4 {
 .disabled {
     background: #161616 !important;
     color: #999 !important;
+    cursor: default !important;
+}
+
+a.disabled {
+    color: #555 !important;
+    background: none !important;
 }
 
 .skin-types {

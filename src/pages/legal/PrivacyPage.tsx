@@ -13,7 +13,6 @@ function PrivacyPage() {
             <div className="text-content">
                 <p>TBD</p>
             </div>
-            <Footer />
         </>
     );
 }

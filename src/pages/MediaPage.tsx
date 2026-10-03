@@ -34,7 +34,7 @@ function MediaPage() {
                 <h2>Bugs / Unintended Client Behavior</h2>
                 <p>If you suspect the client is behaving in an unintended way, please report the issue to developers via a support ticket. If it is confirmed by the developers of the client that the behavior you have described is indeed unintentional, please refrain from showing it in your content until the issue is resolved. If the behavior is intended you are free to show it in your content.</p>
                 <h2>Hack vs Hack (HvH) Fights</h2>
-                <p>You are permitted to show any portion of a an HvH encounter whether the outcome is favorable to the client or otherwise, as long as all external factors are mentioned during the encounter (eg. differences in in-game gear/weapon stats or lack of feature parity between clients).</p>
+                <p>You are permitted to show any portion of a an HvH encounter whether the outcome is favorable to the client or otherwise.</p>
                 <h2>General Usage Restrictions</h2>
                 <ul>
                     <li>Do not under any circumstances attempt to debug, decompile or otherwise tamper with the client in any way.</li>
@@ -44,7 +44,6 @@ function MediaPage() {
                 <p>If the contents of your video are deemed to be breaking these guidelines you may be asked by the Developers of the client to post and/or pin a comment related to the issue or remove portions of your video altogether using the site&#39;s editing features depending on the severity. Failure to do so may result in your access to the client being revoked.</p>
                 <p>If you are in any way related to the unauthorized access of the client by an unintended party your access to the client will be immediately revoked until a resolution has been reached.</p>
             </div>
-            <Footer />
         </>
     );
 }

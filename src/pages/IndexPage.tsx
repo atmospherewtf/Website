@@ -15,7 +15,7 @@ function IndexPage() {
     const [splash, setSplash] = useState("");
 
     useEffect(() => {
-        fetch(`${BASE_URL}/splash`, {
+        fetch(`${BASE_URL()}/splash`, {
             credentials: "include",
         })
         .then(res => res.text())
@@ -136,7 +136,6 @@ function IndexPage() {
                 <p className="subtle">*Any purchases made must be in compliance with our <Link to="/tos">terms of
                     service</Link>.</p>
             </div>
-            <Footer />
         </>
     );
 }

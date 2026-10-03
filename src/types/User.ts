@@ -8,7 +8,6 @@ export interface Discord {
     username: string;
 }
 export interface User {
-    demo: boolean;
     id: number;
     username: string;
     avatar: string;
