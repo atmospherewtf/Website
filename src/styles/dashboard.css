@@ -1,0 +1,225 @@
+h4 {
+    font-weight: 400;
+    color: #999;
+    margin: 0;
+}
+
+/* Download */
+.primary-products {
+    justify-content: center;
+    margin-bottom: 60px;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.product {
+    width: 300px;
+    padding: 20px;
+    padding-top: 0;
+    background: #131313;
+    padding-bottom: 10px;
+    border: 1px solid #202020;
+    box-shadow: #0000001f 0 0 20px;
+}
+
+.product button {
+    border: 1px solid var(--accent);
+    transition: ease-out 0.2s;
+    background: var(--accent);
+    margin-bottom: 10px;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+
+.product .grey {
+    border: 1px solid #414141;
+    background: #1f1f1f;
+}
+
+.other-downloads {
+    border: 1px solid #2e2e2e;
+    transform: translateX(-50%);
+    flex-direction: column;
+    background: #131313;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: left;
+    max-width: 800px;
+    display: flex;
+    padding: 5px;
+    width: 90%;
+    left: 50%;
+    gap: 5px;
+}
+
+.download {
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    color: #d4d4d4;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+    background: #111111;
+}
+
+.download a {
+    transition: 0.2s ease-out;
+    color: #999;
+}
+
+/* Account */
+#account .content {
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+    position: relative;
+    max-width: 800px;
+    width: 90%;
+    left: 50%;
+}
+
+#account button {
+    border: 1px solid #414141;
+    transition: ease-out 0.2s;
+    background: #202020;
+    color: white;
+    width: 150px;
+    height: 35px;
+}
+
+.profile {
+    border: 1px solid #2e2e2e;
+    background: #131313;
+    padding: 10px;
+    display: flex;
+    height: 80px;
+    gap: 15px
+}
+
+.profile .info {
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    display: flex;
+    margin: 0;
+}
+
+.profile .info h4 {
+    position: relative;
+    padding: 0;
+}
+
+.customizations {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.customization {
+    border: 1px solid #2e2e2e;
+    background: #131313;
+    padding: 10px;
+    padding-top: 0;
+    width: 100%;
+}
+
+.customization img {
+    height: 200px;
+    margin: 10px;
+}
+
+.disabled {
+    background: #161616 !important;
+    color: #999 !important;
+    cursor: default !important;
+}
+
+a.disabled {
+    color: #555 !important;
+    background: none !important;
+}
+
+.skin-types {
+    margin-top: 5px;
+    display: flex;
+    gap: 5px;
+}
+
+.section {
+    border: 1px solid #2e2e2e;
+    justify-content: center;
+    background: #131313;
+    align-items: center;
+    margin-top: 10px;
+    text-align: left;
+    display: flex;
+    padding: 10px;
+}
+
+.section h3 {
+    margin: 0;
+    margin-left: 5px;
+}
+
+#modal {
+    transition: opacity 0.1s ease-out;
+    backdrop-filter: blur(3px);
+    background: #00000050;
+    pointer-events: none;
+    position: fixed;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    border: none;
+    opacity: 0;
+    left: 0;
+    top: 0;
+}
+
+#modal div {
+    box-shadow: #0000001f 0 0 20px;
+    transform: translate(-50%, -50%);
+    border: solid 1px #2e2e2e;
+    background: #161616;
+    height: max-content;
+    position: relative;
+    max-width: 300px;
+    padding: 10px;
+    width: 90%;
+    left: 50%;
+    top: 50%; 
+}
+
+#modal button {
+    border: solid 1px #202020;
+    transition: 0.2s ease-out;
+    background: #131313;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+
+.product button:hover { background: var(--accent-dark); }
+.customization button { width: 100% !important; }
+#account button:hover { background: #2e2e2e; }
+.product .grey:hover { background: #2e2e2e; }
+#modal button:hover { background: #2e2e2e; }
+.profile img { border: 1px solid #868686; }
+#customization-notice { text-align: center; }
+.page { min-height: calc(100vh - 106px); }
+.download a:hover { color: white; }
+.other-downloads h4 { padding: 5px; }
+.product h2 { margin-bottom: 5px; }
+.customization h3 { margin: 10px; }
+#remove-cape { margin-top: 5px; }
+.profile .info h2 { margin: 0; }
+#modal div h2 { margin: 5px; }
+.page h1 { padding: 30px; }
+.download p { margin: 0; }
+
+@media only screen and (max-width: 750px) {
+    .primary-products { flex-direction: column; }
+    #account button { width: 75px; }
+}

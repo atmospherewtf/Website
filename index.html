@@ -1,46 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
-<title>atmosphere.wtf</title>
-<meta content="atmosphere.wtf" property="og:title" />
-<meta content="! THEY SAID IT COULDN'T BE DONE !" property="og:description" />
-<meta content="https://atmosphere.wtf" property="og:url" />
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<meta content="#8080FF" data-react-helmet="true" name="theme-color" />
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>atmosphere.wtf</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <marquee>
-        <p id="news">BREAKING NEWS: LOCAL USER UNABLE TO LOAD JAVASCRIPT?! ATMOSPHERE DEVS ARE PISSED.</p>
-    </marquee>
 
-    <div id="about" class="box">
-        <p
-            id="title"
-            class="box-title accent"
-            onclick="alert('YOU\'RE ALREADY ON THE WEBSITE WHERE U TRYNA GO?')"
-        >
-            atmosphere.wtf 
-        </p>
 
-        <div class="box-content">
-            <p>
-                welcome to the atmosphere official website<br>
-                here you can find atmosphere things
-            </p>
-
-            <div id="links">
-                <a href="https://youtube.com/@atmosphereclient">youtube</a>
-                <a href="https://github.com/atmosphereclient">github</a>
-                <a href="https://discord.gg/QAYFNVvx8g">discord</a>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
+    <title>Atmosphere Client</title>
+    <meta content="Atmosphere Client" property="og:title" />
+    <meta content="what are you waiting for?" property="og:description" />
+    <meta content="https://atmosphere.wtf" property="og:url" />
+    <meta property="og:image" content="favicon.ico">
+    <meta content="#8080FF" data-react-helmet="true" name="theme-color" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
