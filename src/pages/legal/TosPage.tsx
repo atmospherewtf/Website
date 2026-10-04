@@ -7,7 +7,7 @@ function TosPage() {
         <>
             <div className="header">
                 <h1>Terms Of Service</h1>
-                <h3>Last Updated: 03/10/25</h3>
+                <h3>Last Updated: 03/10/26</h3>
             </div>
 
             <div className="text-content">

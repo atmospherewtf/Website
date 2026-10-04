@@ -8,7 +8,7 @@ function MediaPage() {
         <>
             <div className="header">
                 <h1>Media Guidelines</h1>
-                <h3>Last Updated: 19/10/25</h3>
+                <h3>Last Updated: 03/10/26</h3>
             </div>
 
             {/*// <!-- Automatically converted from Obsidian markdown file. -->*/}
