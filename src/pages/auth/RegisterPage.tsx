@@ -10,6 +10,8 @@ function RegisterPage() {
     const [password, setPassword] = useState("");
     const [invite, setInvite] = useState("");
 
+    const [errors, setErrors] = useState<string[]>([]);
+
     useEffect(() => {
         fetch(`${BASE_URL()}/user/@me`, {
             credentials: "include",
@@ -19,6 +21,11 @@ function RegisterPage() {
     }, []);
 
     function submit() {
+        setErrors([]);
+        if (!username || !password || !invite) {
+            return setErrors(["Username / password / invite cannot be empty"]);
+        }
+
         fetch(`${BASE_URL()}/auth/register`, {
             method: "POST",
             credentials: "include",
@@ -31,12 +38,20 @@ function RegisterPage() {
                 invite: invite,
             }),
         }).then(async (res) => {
-            if (res.status !== 200) return;
-            let data = await res.json();
-            document.cookie = `token=${data.session};max-age=604800;samesite=none;secure;`;
+            const contentType = res.headers.get("content-type");
+            let data = contentType?.includes("application/json")
+                ? await res.json()
+                : undefined;
+
+            if (res.status != 200) {
+                setErrors(data?.errors ?? ["Unknown error"]);
+                return;
+            }
+
+            // document.cookie = `token=${data.session};max-age=604800;samesite=none;secure;`;
             // hack - race condition on useeffect for layout on redirect or sum
-            window.location.reload();
-            // router("/dashboard");
+            // window.location.reload();
+            router("/dashboard");
         });
     }
 
@@ -45,6 +60,7 @@ function RegisterPage() {
             <div className="box">
                 <div className="line"></div>
                 <h2>Register</h2>
+                <a>{errors.map(error => (<><a>{error}</a><br/></>))}</a>
                 <div className="field">
                     <input type="text" placeholder="username" onChange={(event) => setUsername(event.target.value)}/>
                     <i className="fa-solid fa-user"></i></div>

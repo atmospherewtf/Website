@@ -24,7 +24,7 @@ function DefaultLayout({ authed = false, }: { authed?: boolean; }) {
 
     useEffect(() => {
         console.log(location.pathname);
-        setFooter(!["/login", "register"].includes(location.pathname));
+        setFooter(!["/login", "/register"].includes(location.pathname));
         fetch(`${BASE_URL()}/user/@me`, {
             credentials: "include",
         }).then(res => {

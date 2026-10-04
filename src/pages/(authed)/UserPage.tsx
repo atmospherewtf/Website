@@ -57,25 +57,25 @@ function UserPage() {
                     <div className="section">
                         <h3>Request HWID Reset</h3>
                         <div className="spacer"></div>
-                        <button id="hwid-reset">Request</button>
+                        <button id="hwid-reset" className="disabled">Request</button>
                     </div>
 
                     <div className="section">
                         <h3>Change Username</h3>
                         <div className="spacer"></div>
-                        <button id="change-username">Change</button>
+                        <button id="change-username" className="disabled">Change</button>
                     </div>
 
                     <div className="section">
                         <h3>Change Password</h3>
                         <div className="spacer"></div>
-                        <button id="change-password">Change</button>
+                        <button id="change-password" className="disabled">Change</button>
                     </div>
 
                     <div className="section">
                         <h3>Link Discord</h3>
                         <div className="spacer"></div>
-                        <button>Link</button>
+                        <button id="link-discord" className="disabled">Link</button>
                     </div>
                 </div>
             </div>
