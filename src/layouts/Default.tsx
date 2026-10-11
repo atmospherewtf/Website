@@ -3,10 +3,11 @@ import {Suspense, useEffect, useState} from "react";
 import ErrorBoundary from "../components/ErrorBoundary.tsx";
 import Navbar from "../components/Navbar.tsx";
 import {Outlet, useLocation, useNavigate} from "react-router-dom";
-import DasboardNavbar from "../components/DasboardNavbar.tsx";
+import DasboardNavbar from "../components/DashboardNavbar.tsx";
 import {BASE_URL} from "../consts.ts";
 import {type User, UserTemplate} from "../types/User.ts";
 import Footer from "../components/Footer.tsx";
+import {fetchAsset} from "../utils/discord.ts";
 
 function DefaultLayout({ authed = false, }: { authed?: boolean; }) {
     const router = useNavigate();
@@ -22,9 +23,23 @@ function DefaultLayout({ authed = false, }: { authed?: boolean; }) {
         );
     }, []);
 
+    const fetchDiscordAvatar = async (discord: any) => {
+        const avatarExtension =
+            discord.avatar &&
+            discord.avatar.startsWith("a_")
+                ? "gif"
+                : "webp";
+
+        const avatarSize = avatarExtension === "gif" ? "64" : "256";
+        return await fetchAsset(
+            `https://cdn.discordapp.com/avatars/${discord.discID}/${discord.avatar}.${avatarExtension}?size=${avatarSize}`
+        );
+    }
+
     useEffect(() => {
         console.log(location.pathname);
         setFooter(!["/login", "/register"].includes(location.pathname));
+
         fetch(`${BASE_URL()}/user/@me`, {
             credentials: "include",
         }).then(res => {
@@ -34,8 +49,8 @@ function DefaultLayout({ authed = false, }: { authed?: boolean; }) {
                 return;
 
             return res.json();
-        }).then(data => {
-            if (!data || localStorage.getItem("user")) return;
+        }).then(async data => {
+            if (!data) return;
             const tmp = {
                 id: data.id,
                 username: data.username,
@@ -43,14 +58,14 @@ function DefaultLayout({ authed = false, }: { authed?: boolean; }) {
                     id: data.discord.discID,
                     username: data.discord.username,
                 } : null,
-                avatar: data.discord?.avatar ?? UserTemplate.avatar,
+                avatar: data.discord?.avatar ? await fetchDiscordAvatar(data.discord) ?? UserTemplate.avatar : UserTemplate.avatar,
                 skin: data.profile?.skinData ?? UserTemplate.skin,
                 cape: data.profile?.capeData ?? UserTemplate.cape,
                 // ...data,
             };
             setUser(tmp);
             localStorage.setItem("user", JSON.stringify(tmp));
-            window.location.reload();
+            // window.location.reload();
         });
     }, [location.pathname]);
     console.log(user);
@@ -62,7 +77,7 @@ function DefaultLayout({ authed = false, }: { authed?: boolean; }) {
     return (
         <>
             <ErrorBoundary>
-            {!authed ? <Navbar/> : <DasboardNavbar user={user}/>}
+            {!authed ? <Navbar/> : <DasboardNavbar/>}
             {/*{children}*/}
             <Suspense>
                 <Outlet />

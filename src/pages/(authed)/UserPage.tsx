@@ -24,7 +24,7 @@ function UserPage() {
                         <img alt="avatar" src={user.avatar} />
                         <div className="info">
                             <h2>{user?.username}</h2>
-                            <h4>UID {user.id} • @{user.discord?.username ?? "discord"}</h4>
+                            <h4>UID {user.id} • {user.discord?.username ? "@" + (user.discord?.username ?? "discord") : <a href="/link">Link Discord</a>}</h4>
                         </div>
                     </div>
 
@@ -75,7 +75,7 @@ function UserPage() {
                     <div className="section">
                         <h3>Link Discord</h3>
                         <div className="spacer"></div>
-                        <button id="link-discord" className="disabled">Link</button>
+                        <button id="link-discord" onClick={() => router("/link")}>Link</button>
                     </div>
                 </div>
             </div>

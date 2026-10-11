@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import icon128 from '../assets/img/128.png'
 import {useEffect, useState} from "react";
 
-function DasboardNavbar({user}: {user?: any}) {
+function DashboardNavbar() {
     // i hate your bad screen sizes
     const [width, setWidth] = useState<number>(0);
     const threshold = 504;
@@ -33,4 +33,4 @@ function DasboardNavbar({user}: {user?: any}) {
     )
 }
 
-export default DasboardNavbar
+export default DashboardNavbar

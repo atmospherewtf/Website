@@ -43,20 +43,20 @@ function DownloadPage() {
                         <div className="line"></div>
                         <h2>Atmosphere 1.8</h2>
                         <h4>Minecraft 1.8.8 Client</h4>
-                        <p>Last Updated: XX/XX/26</p>
+                        <p>Last Updated: 10/10/26</p>
                         <p><span className="accent">{stats?.total_launches ?? "?"}</span> Total Downloads</p>
                         <button>Coming Soon</button>
-                        <button className="grey">Changelogs</button>
+                        <button className="grey disabled">Changelogs</button>
                     </div>
 
                     <div className="product">
                         <div className="line"></div>
-                        <h2>Atmosphere 1.21.11</h2>
-                        <h4>Fabric 1.21.11 Mod</h4>
+                        <h2>Atmosphere Modern</h2>
+                        <h4>Fabric Mod</h4>
                         <p>Last Updated: XX/XX/26</p>
                         <p><span className="accent">?</span> Total Downloads</p>
-                        <button>Coming Soon</button>
-                        <button className="grey">Changelogs</button>
+                        <button className="grey disabled">Coming Soon</button>
+                        <button className="grey disabled">Changelogs</button>
                     </div>
                 </div>
 

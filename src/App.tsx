@@ -1,5 +1,7 @@
 import type { RouteRecord } from 'vite-react-ssg'
 
+import DefaultLayout from "./layouts/Default.tsx";
+
 import IndexPage from "./pages/IndexPage.tsx";
 import PrivacyPage from "./pages/legal/PrivacyPage.tsx";
 import TosPage from "./pages/legal/TosPage.tsx";
@@ -11,13 +13,13 @@ import LogoutPage from "./pages/auth/LogoutPage.tsx";
 
 import DashboardPage from "./pages/(authed)/DashboardPage.tsx";
 import UserPage from "./pages/(authed)/UserPage.tsx";
+import LinkPage from "./pages/(authed)/LinkPage.tsx";
 import DownloadPage from "./pages/(authed)/DownloadPage.tsx";
 import ChangelogPage from "./pages/(authed)/ChangelogPage.tsx";
 
 import './styles/global/base.css'
 import './styles/global/navbar.css'
 import './styles/global/footer.css'
-import DefaultLayout from "./layouts/Default.tsx";
 
 export const routes: RouteRecord[] = [
     {
@@ -67,6 +69,10 @@ export const routes: RouteRecord[] = [
             {
                 path: "/user",
                 element: <UserPage/>
+            },
+            {
+                path: "/link",
+                element: <LinkPage/>,
             },
             {
                 path: "/changelogs",
