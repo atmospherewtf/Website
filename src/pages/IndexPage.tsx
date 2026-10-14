@@ -32,7 +32,7 @@ function IndexPage() {
                     <a href="#purchase">
                         <button>Purchase</button>
                     </a>
-                    <a href="https://discord.gg/YdHGZcKtER">
+                    <a href="https://discord.gg/F9EJqMUBWf">
                         <button>Discord</button>
                     </a>
                 </div>
